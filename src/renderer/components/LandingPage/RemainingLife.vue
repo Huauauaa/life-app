@@ -77,6 +77,11 @@ export default {
       return this.idealAge * 12
     }
   },
+  async created () {
+    console.log('created')
+    const resp = await this.$http.get(`/data2.json`)
+    console.log(resp)
+  },
   methods: {
     disabledDate (date) {
       return date.getTime() > new Date().getTime()
